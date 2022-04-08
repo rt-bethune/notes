@@ -1,11 +1,9 @@
 <?php
 require_once "config.php";
-include_once __DIR__ . '/vendor/apereo/phpcas/CAS.php';
-$debug = getenv('APP_DEBUG') === 'true';
-if (getenv('APP_FAKE') === 'true') {
+$debug = $_ENV['APP_DEBUG'];
+if ($_ENV['APP_FAKE']) {
     $nip = "22005039"; //22003409; 22101695
 } else {
-
     //For development. Prints out additional warnings.
     if ($debug) {
         phpCAS::setDebug();

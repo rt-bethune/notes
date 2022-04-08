@@ -1,17 +1,20 @@
 <?php
+
+include_once __DIR__ . '/vendor/autoload.php';
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$cas_host = getenv('CAS_HOST');
+$cas_host = $_ENV['CAS_HOST'];
 $cas_port = 443; 
-$cas_context =getenv('CAS_CONTEXT');
-$sco_user = getenv('SCODOC_USER');
-$sco_pw = getenv('SCODOC_PASSWORD');
-$sco_url = getenv('SCODOC_URL');
+$cas_context =$_ENV['CAS_CONTEXT'];
+$sco_user = $_ENV['SCODOC_USER'];
+$sco_pw = $_ENV['SCODOC_PASSWORD'];
+$sco_url = $_ENV['SCODOC_URL'];
 $http_options = array();
 
-if(getenv("PROXY")){
-    $http_options = array('proxy' => getenv('PROXY'), 'request_fulluri' => true,);
+if(isset($_ENV["PROXY"])){
+    $http_options = array('proxy' => $_ENV['PROXY'], 'request_fulluri' => true,);
     stream_context_set_default(['http'=> $http_options]);
 
 }

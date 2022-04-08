@@ -2,7 +2,7 @@
 <?php
 require_once "config.php";
 require_once 'connexion.php';
-phpCAS::logout();
+//phpCAS::logout();
 session_start();
 
 // Détruit toutes les variables de session
