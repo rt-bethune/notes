@@ -1,0 +1,11 @@
+{
+    "require": {
+        "apereo/phpcas": "^1.4",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "scripts" : {
+        "post-install-cmd" : [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    }
+}
