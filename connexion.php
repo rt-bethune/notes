@@ -2,7 +2,7 @@
 require_once "config.php";
 $debug = $_ENV['APP_DEBUG'];
 if ($_ENV['APP_FAKE']) {
-    $nip = "22005039"; //22003409; 22101695
+    $nip = "22101695"; //22003409; 22101695
 } else {
     //For development. Prints out additional warnings.
     if ($debug) {
